@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            /*string cadena = "uno*dos,tres,cuatro,cinco";
+            string[] partes = cadena.Split(',');
+            //string cadena = "uno dos tres cuatro cinco";
+            //string[] partes = cadena.Split();
+
+            for (int i = 0; i < partes.Length; i++)
+            {
+                Console.WriteLine(partes[i]);
+            }
+            Console.ReadLine();*/
+            int opcion;
+            string[] Datos;
+            int n=0;
+            
+            string[,] Registros = new string[4,4];
+            string Registro;
+
+            do
+	        {
+                Console.WriteLine("Seleccione una opcion");
+                Console.WriteLine("1. Introducir un regristro");
+                Console.WriteLine("2. Mostrar Registro");
+                opcion = Convert.ToInt32(Console.ReadLine());
+	         switch (opcion)
+	        {
+             case 1: 
+                Console.WriteLine("Introduzca los datos separados por coma(,)");
+                     Console.WriteLine("Ejemplo: Carlos Lopez, 77894562, CarlosLo785@gmail.com, Raul ");
+                     Registro = Console.ReadLine();
+                     Datos = Registro.Split(',');
+                     
+                     for (int i = 0; i < Datos.Length; i++)
+			        {
+                         Registros[n,i] = Datos[i];
+
+			        }
+                       n++;
+             break;
+                 case 2:
+                     Console.WriteLine("Los Registros ingresados son:");
+                     for (int i = 0; i < n; i++)
+
+			        {
+			            for (int j = 0; j < 4; j++)
+			        {
+			            Console.Write(Registros[i,j]);
+			        }
+                         Console.WriteLine();
+			        }
+                     break;
+
+                 case 3:
+                  break;
+
+
+		            default:
+                    break;
+	                }
+
+	        } while (opcion != 3 );
+           
+
+            
+
+        }
+    }
+}
